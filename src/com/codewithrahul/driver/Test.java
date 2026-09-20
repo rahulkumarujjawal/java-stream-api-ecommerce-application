@@ -33,57 +33,46 @@ public class Test {
                 .forEach(Name -> System.out.println(Name));
 
 
-        // ==================================================
+        
         // 2. map()
         // Get only product names
-        // ==================================================
 
         System.out.println("\n--- MAP ---");
 
         products.stream().map(product->product.getName())
                 .forEach(name -> System.out.println(name));
 
-        // ==================================================
         // 3. sorted()
         // Sort products by price
-        // ==================================================
 
         System.out.println("\n--- SORTED ---");
 
         products.stream().sorted(Comparator.comparingDouble(Product::getPrice))
                 .forEach(product -> System.out.println(product));
 
-        // ==================================================
         // 4. distinct()
         // Get unique product names
-        // ==================================================
 
         System.out.println("\n--- DISTINCT ---");
 
         products.stream().map(Product::getName).distinct().forEach(name -> System.out.println(name));
 
-        // ==================================================
         // 5. limit()
         // Get first 3 products
-        // ==================================================
 
         System.out.println("\n--- LIMIT ---");
 
         products.stream().limit(3).forEach(product -> System.out.println(product));
 
-        // ==================================================
         // 6. skip()
         // Skip first 3 products
-        // ==================================================
 
         System.out.println("\n--- SKIP ---");
 
         products.stream().skip(3).forEach(product -> System.out.println(product));
 
-        // ==================================================
         // 7. peek()
         // Debug / inspect data
-        // ==================================================
 
         System.out.println("\n--- PEEK ---");
 
@@ -97,19 +86,15 @@ public class Test {
 
                 .forEach(name -> System.out.println("Final: " + name));
 
-        // ==================================================
         // 8. flatMap()
         // Get ALL products from ALL orders
-        // ==================================================
 
         System.out.println("\n--- FLAT MAP ---");
 
         orders.stream().flatMap(order -> order.getProducts().stream()).forEach(product -> System.out.println(product));
 
-        // ==================================================
         // 9. collect()
         // Products above ₹50,000 into List
-        // ==================================================
 
         System.out.println("\n--- COLLECT ---");
 
@@ -118,10 +103,8 @@ public class Test {
 
         System.out.println(expensiveProducts);
 
-        // ==================================================
         // 10. count()
         // Count electronics
-        // ==================================================
 
         System.out.println("\n--- COUNT ---");
 
@@ -130,10 +113,8 @@ public class Test {
 
         System.out.println("Electronics count = " + electronicsCount);
 
-        // ==================================================
         // 11. min()
         // Cheapest product
-        // ==================================================
 
         System.out.println("\n--- MIN ---");
 
@@ -155,10 +136,8 @@ public class Test {
          *
          */
 
-        // ==================================================
         // 13. reduce()
         // Total product price
-        // ==================================================
 
         System.out.println("\n--- REDUCE ---");
 
@@ -166,10 +145,8 @@ public class Test {
 
         System.out.println("Total Price = ₹" + totalPrice);
 
-        // ==================================================
         // 14. findFirst()
         // First Apple product
-        // ==================================================
 
         System.out.println("\n--- FIND FIRST ---");
 
@@ -178,10 +155,8 @@ public class Test {
 
         firstApple.ifPresent(product -> System.out.println(product));
 
-        // ==================================================
         // 15. findAny()
         // Find any Logitech product
-        // ==================================================
 
         System.out.println("\n--- FIND ANY ---");
 
@@ -190,10 +165,8 @@ public class Test {
 
         anyLogitech.ifPresent(product -> System.out.println(product));
 
-        // ==================================================
         // 16. anyMatch()
         // Is there any product above ₹1 lakh?
-        // ==================================================
 
         System.out.println("\n--- ANY MATCH ---");
 
@@ -201,10 +174,8 @@ public class Test {
 
         System.out.println("Any product above 1 lakh = " + anyAboveOneLakh);
 
-        // ==================================================
         // 17. allMatch()
         // Are all products rating above 4?
-        // ==================================================
 
         System.out.println("\n--- ALL MATCH ---");
 
@@ -212,10 +183,8 @@ public class Test {
 
         System.out.println("All rating above 4 = " + allRatingAboveFour);
 
-        // ==================================================
         // 18. noneMatch()
         // Is there NO product below ₹500?
-        // ==================================================
 
         System.out.println("\n--- NONE MATCH ---");
 
@@ -223,10 +192,8 @@ public class Test {
 
         System.out.println("No product below ₹500 = " + noCheapProduct);
 
-        // ==================================================
         // 19. groupingBy()
         // Group products by category
-        // ==================================================
 
         System.out.println("\n--- GROUPING BY ---");
 
@@ -235,10 +202,8 @@ public class Test {
 
         productsByCategory.forEach((category, productList) -> System.out.println(category + " = " + productList));
 
-        // ==================================================
         // 20. partitioningBy()
         // Expensive vs normal products
-        // ==================================================
 
         System.out.println("\n--- PARTITIONING BY ---");
 
@@ -249,10 +214,8 @@ public class Test {
 
         System.out.println("Normal = " + expensivePartition.get(false));
 
-        // ==================================================
         // 21. toMap()
         // Product ID -> Product Name
-        // ==================================================
 
         System.out.println("\n--- TO MAP ---");
 
@@ -260,10 +223,8 @@ public class Test {
 
         System.out.println(productMap);
 
-        // ==================================================
         // 22. joining()
         // All product names in one String
-        // ==================================================
 
         System.out.println("\n--- JOINING ---");
 
@@ -271,10 +232,8 @@ public class Test {
 
         System.out.println(productNames);
 
-        // ==================================================
         // 23. groupingBy() + counting()
         // How many products in each category?
-        // ==================================================
 
         System.out.println("\n--- GROUPING + COUNTING ---");
 
@@ -283,11 +242,10 @@ public class Test {
 
         System.out.println(categoryCount);
 
-        // ==================================================
         // 24. Order Stream
         // Completed orders above ₹50,000
         // Get customer names
-        // ==================================================
+      
 
         System.out.println("\n--- REAL ORDER PIPELINE ---");
 
@@ -316,10 +274,7 @@ public class Test {
 
         System.out.println(customers);
 
-        // ==================================================
-        // 25. flatMap + filter + map + distinct
-        // Completed orders ke products
-        // ==================================================
+        // 25. flatMap + filter + map + distinct  Completed orders ke products
 
         System.out.println("\n--- COMPLETED ORDER PRODUCTS ---");
 
@@ -339,9 +294,8 @@ public class Test {
 
         System.out.println(completedProductNames);
 
-        // ==================================================
+    
         // 26. Order total using reduce()
-        // ==================================================
 
         System.out.println("\n--- TOTAL ORDER AMOUNT ---");
 
@@ -353,10 +307,8 @@ public class Test {
 
         System.out.println("Total Order Amount = ₹" + totalOrderAmount);
 
-        // ==================================================
         // 27. forEach()
         // Send order update
-        // ==================================================
 
         System.out.println("\n--- ORDER UPDATE ---");
 
