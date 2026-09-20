@@ -32,6 +32,8 @@ The project uses a collection of E-Commerce products and applies different Strea
 
 
 🔥 Stream API Concepts Implemented
+
+
 𝟭️⃣ 𝗳𝗶𝗹𝘁𝗲𝗿()
 🔍 Used to filter products based on a specific condition.
 products.stream()
